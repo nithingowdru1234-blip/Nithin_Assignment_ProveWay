@@ -1,0 +1,258 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5; /* Light background for the overall page */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Header and Title */
+.title {
+    text-align: center;
+    color: #FF69B4; /* Pink */
+    font-weight: 700;
+    margin-bottom: 25px;
+    font-size: 1.5em;
+}
+
+/* --- Interactive Box Styling --- */
+
+.box-wrapper {
+    margin-bottom: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; /* Crucial for transition */
+    background-color: #fff;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Active/Selected Box Styling */
+.box-wrapper.active {
+    border-color: #FF69B4; /* Pink border for selected box */
+    background-color: #FFF0F5; /* Very light pink background */
+}
+
+/* Plan Header (The main clickable area) */
+.plan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* Radio Button */
+.plan-header input[type="radio"] {
+    /* Custom styling for radio button */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+/* Checked radio button state */
+.plan-header input[type="radio"]:checked {
+    border: 6px solid #FF69B4; /* Pink border */
+    border-color: #FF69B4;
+}
+
+/* Plan Details (1 Unit, 10% Off, etc.) */
+.plan-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-name {
+    font-weight: 600;
+    font-size: 1.1em;
+}
+
+.discount-tag {
+    background-color: #FF69B4;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 600;
+    width: fit-content;
+    margin-top: 4px;
+}
+
+.standard-price {
+    font-size: 0.75em;
+    color: #FF69B4;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+/* Plan Price Section */
+.plan-price {
+    text-align: right;
+    margin-left: 10px;
+}
+
+.current-price {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    display: block;
+}
+
+.original-price {
+    font-size: 0.8em;
+    color: #999;
+    text-decoration: line-through;
+    display: block;
+}
+
+/* MOST POPULAR Badge */
+.most-popular .popular-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #FF69B4;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.7em;
+    font-weight: 700;
+    border-radius: 0 8px 0 8px;
+    z-index: 10;
+}
+
+/* --- Plan Content (The expanding part) --- */
+
+.plan-content {
+    /* Transition for smooth collapse/expand */
+    max-height: 0; 
+    padding: 0 15px;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+    overflow: hidden;
+}
+
+.plan-content.active {
+    /* Set a max-height large enough to contain all content */
+    max-height: 300px; 
+    padding: 15px;
+    padding-top: 0; /* Adjust as padding-bottom is needed for separation */
+    transition: max-height 0.4s ease-in, padding 0.4s ease-in;
+}
+
+/* Options/Dropdown Styling */
+.options-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.item-selector {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+}
+
+.item-selector label {
+    font-weight: 600;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.item-selector select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none; /* Remove default arrow */
+    background: white url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2084.7L152.1%20219.6c-3.2%203.2-8.3%203.2-11.5%200L5.3%2084.7c-3.2-3.2-3.2-8.3%200-11.5L25%2056.5c3.2-3.2%208.3-3.2%2011.5%200l115.6%20115.6L255.9%2056.5c3.2-3.2%208.3-3.2%2011.5%200l19.7%2016.7c3.2%203.2%203.2%208.3%200%2011.5z%22%2F%3E%3C%2Fsvg%3E') no-repeat right 10px center;
+    background-size: 10px;
+}
+
+/* Specific style for the 'Black' color dropdown as per the image */
+.black-select {
+    border-color: #FF69B4;
+}
+
+/* --- Footer Section --- */
+
+.delivery-info {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.free-delivery {
+    background-color: #FFFF00; /* Yellow highlight color */
+    padding: 3px 8px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #333;
+}
+
+.total-section {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.total-text {
+    font-weight: 400;
+    margin-right: 5px;
+}
+
+.total-price {
+    font-weight: 700;
+    color: #333;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF69B4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 20px;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #e05c9e;
+}
+
+.powered-by {
+    text-align: center;
+    font-size: 0.7em;
+    color: #999;
+}

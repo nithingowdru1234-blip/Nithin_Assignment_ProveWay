@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Boxes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="title">YAY! It's BOGO</h1>
+        
+        <div class="box-wrapper" data-plan="1">
+            <label class="plan-header">
+                <input type="radio" name="bundle" value="1" checked>
+                <div class="plan-details">
+                    <span class="plan-name">1 Unit</span>
+                    <span class="discount-tag">10% Off</span>
+                    <span class="standard-price">Standard Price</span>
+                </div>
+                <div class="plan-price">
+                    <span class="current-price">$10.00 USD</span>
+                    <span class="original-price">$24.00 USD</span>
+                </div>
+            </label>
+            <div class="plan-content">
+                </div>
+        </div>
+
+        <div class="box-wrapper most-popular" data-plan="2">
+            <div class="popular-badge">MOST POPULAR</div>
+            <label class="plan-header">
+                <input type="radio" name="bundle" value="2">
+                <div class="plan-details">
+                    <span class="plan-name">2 Unit</span>
+                    <span class="discount-tag">20% Off</span>
+                </div>
+                <div class="plan-price">
+                    <span class="current-price">$18.00 USD</span>
+                    <span class="original-price">$24.00 USD</span>
+                </div>
+            </label>
+            <div class="plan-content active">
+                <div class="options-row">
+                    <div class="item-selector">
+                        <label for="size1">Size</label>
+                        <select id="size1" name="size1">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+                    <div class="item-selector">
+                        <label for="colour1">Colour</label>
+                        <select id="colour1" name="colour1" class="black-select">
+                            <option value="Black">Black</option>
+                            <option value="White">White</option>
+                            <option value="Grey">Grey</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options-row">
+                    <div class="item-selector">
+                        <label for="size2">Size</label>
+                        <select id="size2" name="size2">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                        </select>
+                    </div>
+                    <div class="item-selector">
+                        <label for="colour2">Colour</label>
+                        <select id="colour2" name="colour2">
+                            <option value="Colour">Colour</option>
+                            <option value="Red">Red</option>
+                            <option value="Blue">Blue</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-wrapper" data-plan="3">
+            <label class="plan-header">
+                <input type="radio" name="bundle" value="3">
+                <div class="plan-details">
+                    <span class="plan-name">3 Unit</span>
+                    <span class="discount-tag">30% Off</span>
+                </div>
+                <div class="plan-price">
+                    <span class="current-price">$24.00 USD</span>
+                    <span class="original-price">$24.00 USD</span>
+                </div>
+            </label>
+            <div class="plan-content">
+                <div class="options-row">
+                    <div class="item-selector">
+                        <label for="size3_1">Size</label>
+                        <select id="size3_1" name="size3_1">
+                            <option value="S">S</option>
+                        </select>
+                    </div>
+                    <div class="item-selector">
+                        <label for="colour3_1">Colour</label>
+                        <select id="colour3_1" name="colour3_1">
+                            <option value="Colour">Colour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options-row">
+                    <div class="item-selector">
+                        <label for="size3_2">Size</label>
+                        <select id="size3_2" name="size3_2">
+                            <option value="S">S</option>
+                        </select>
+                    </div>
+                    <div class="item-selector">
+                        <label for="colour3_2">Colour</label>
+                        <select id="colour3_2" name="colour3_2">
+                            <option value="Colour">Colour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="options-row">
+                    <div class="item-selector">
+                        <label for="size3_3">Size</label>
+                        <select id="size3_3" name="size3_3">
+                            <option value="S">S</option>
+                        </select>
+                    </div>
+                    <div class="item-selector">
+                        <label for="colour3_3">Colour</label>
+                        <select id="colour3_3" name="colour3_3">
+                            <option value="Colour">Colour</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p class="delivery-info">
+            <span class="free-delivery">Free Delivery</span>
+        </p>
+        
+        <div class="total-section">
+            <span class="total-text">Total :</span>
+            <span class="total-price">$18.00 USD</span>
+        </div>
+
+        <button class="add-to-cart-btn">
+            + Add to Cart
+        </button>
+
+        <p class="powered-by">@ Powered by Pumper</p>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
